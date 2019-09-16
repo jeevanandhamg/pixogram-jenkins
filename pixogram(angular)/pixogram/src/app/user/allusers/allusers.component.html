@@ -1,0 +1,28 @@
+<app-header></app-header><br>
+<div class="row">
+<div *ngFor="let u of userList">
+    {{summa()}}
+    
+      <div class="col-3">
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="/assets/images/dp2.jpg" alt="profile image">
+    <div class="card-body">
+      <h5 class="card-title">@{{u.name}}</h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <div *ngFor="let fg of following,index as i" >
+          <div *ngIf="u.id==fg.followid.id" >
+        <a  class="btn btn-info">Following </a>{{passIndex()}}
+          </div>
+        <!-- {{i}}  -->
+  
+        
+      </div>
+
+      <div *ngIf="n==false">
+          <a [hidden]="n" class="btn btn-info" (click)="followUser(f.userid)">Follow</a> 
+       </div>
+       </div>
+       </div><br><br>
+    </div>
+  </div>
+  </div>
